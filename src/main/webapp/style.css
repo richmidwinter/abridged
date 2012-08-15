@@ -9,6 +9,7 @@ body {
     margin-top: 10%;
     padding: 20px;
     border: 20px solid #eee;
+    font-family: verdana;
 }
 
 input[type=text] {
