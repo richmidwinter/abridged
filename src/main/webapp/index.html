@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>URL Shortener</title>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <script type="text/ecmascript" src="js/jquery-1.8.0-min.js"></script>
+        <script type="text/ecmascript" src="js/main.js"></script>
+    </head>
+    <body>
+        <div id="container">
+            <form onsubmit="javascript: return go(this)">
+                <input type="text" /> <input type="submit" value="shortn" />
+            </form>
+        </div>
+        <div id="output">
+            <p title="Press ctrl-c to copy" id="result"></p>
+        </div>
+    </body>
+</html>
