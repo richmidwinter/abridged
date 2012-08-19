@@ -1,11 +1,11 @@
 function go(e) {
 	$.ajax({
 	  type: 'POST',
-	  url: '/s/api/mappings',
+	  url: '/api/mappings',
 	  data: e.childNodes[1].value,
 	  complete: function(result) {
 		  if (result.responseText.length == 7) {
-			  $('#result').text('http://localhost:8080/s/' +result.responseText);
+			  $('#result').text(window.location.href +result.responseText);
 			  
 			  selectText('result');
 		  }

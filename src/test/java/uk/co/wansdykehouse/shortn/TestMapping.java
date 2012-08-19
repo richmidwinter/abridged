@@ -4,21 +4,21 @@ import junit.framework.TestCase;
 
 import org.junit.Test;
 
+import uk.co.wansdykehouse.shortn.api.Mappings;
+
 public class TestMapping extends TestCase {
 	
 	@Test
-    public void testPersist(){
+    public void testPersist() throws Exception {
         Mapping mapping = new Mapping();
-        mapping.setUrl("http://twitter.com");
-        mapping.setHash("xkfwe8");
+        mapping.setUrl("google.co.uk");
+        mapping.setHash(new Mappings().getHash(mapping.getUrl()));
         
-        PersistenceManager p = new PersistenceManager();
+        PersistenceManager p = PersistenceManager.get();
         
-        p.persist(mapping);
+        Mapping result = p.lookup(mapping.getHash());
         
-        Mapping result = p.find(mapping.getUrl());
-
-        assertEquals(mapping.getUrl(), result.getUrl());
+        assertEquals("http://" + mapping.getUrl(), result.getUrl());
         assertEquals(mapping.getHash(), result.getHash());
 	}
 }
