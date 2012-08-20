@@ -1,4 +1,4 @@
-package uk.co.wansdykehouse.shortn;
+package uk.co.wansdykehouse.abridged;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

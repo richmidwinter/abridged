@@ -1,4 +1,4 @@
-package uk.co.wansdykehouse.shortn;
+package uk.co.wansdykehouse.abridged;
 
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
@@ -11,7 +11,7 @@ public class PersistenceManager {
 	private EntityManager em;
 	
 	private PersistenceManager() {
-		em = Persistence.createEntityManagerFactory("shortn").createEntityManager();
+		em = Persistence.createEntityManagerFactory("abridged").createEntityManager();
 	}
 	
 	public static PersistenceManager get() {

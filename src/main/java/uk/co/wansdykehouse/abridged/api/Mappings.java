@@ -1,4 +1,4 @@
-package uk.co.wansdykehouse.shortn.api;
+package uk.co.wansdykehouse.abridged.api;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -9,9 +9,9 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import uk.co.wansdykehouse.shortn.Hash;
-import uk.co.wansdykehouse.shortn.Mapping;
-import uk.co.wansdykehouse.shortn.PersistenceManager;
+import uk.co.wansdykehouse.abridged.Hash;
+import uk.co.wansdykehouse.abridged.Mapping;
+import uk.co.wansdykehouse.abridged.PersistenceManager;
 
 @Path("/api/mappings")
 public class Mappings {

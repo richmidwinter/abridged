@@ -1,10 +1,10 @@
-package uk.co.wansdykehouse.shortn;
+package uk.co.wansdykehouse.abridged;
 
 import junit.framework.TestCase;
 
 import org.junit.Test;
 
-import uk.co.wansdykehouse.shortn.api.Mappings;
+import uk.co.wansdykehouse.abridged.api.Mappings;
 
 public class TestMapping extends TestCase {
 	
