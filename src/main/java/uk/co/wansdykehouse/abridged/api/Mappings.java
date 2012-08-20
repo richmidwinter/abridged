@@ -13,13 +13,13 @@ import uk.co.wansdykehouse.abridged.Hash;
 import uk.co.wansdykehouse.abridged.Mapping;
 import uk.co.wansdykehouse.abridged.PersistenceManager;
 
-@Path("/api/mappings")
+@Path("/api")
 public class Mappings {
 	
 	private static PersistenceManager p = PersistenceManager.get();
 
 	@POST
-	@Path("/")
+	@Path("/mappings")
 	@Consumes(MediaType.TEXT_PLAIN)
 	@Produces(MediaType.TEXT_PLAIN)
 	public String getHash(String link) {
