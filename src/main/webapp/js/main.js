@@ -1,7 +1,7 @@
 function go(e) {
 	$.ajax({
 	  type: 'POST',
-	  url: '/api/mappings',
+	  url: '/abridged/api/mappings',
 	  data: e.childNodes[1].value,
 	  complete: function(result) {
 		  if (result.responseText.length == 7) {
