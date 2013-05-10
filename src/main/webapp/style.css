@@ -13,7 +13,7 @@ div#wrapper {
 input[type=text] {
     padding: 5px;
     border: 1px solid #666;
-    width: 256px;
+    width: 300px;
 }
 
 input[type=submit] {
