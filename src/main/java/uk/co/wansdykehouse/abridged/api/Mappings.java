@@ -31,8 +31,6 @@ public class Mappings {
 			System.err.println(e.getMessage());
 		}
 		
-		System.out.println("Using link " +link);
-		
 		Mapping mapping = p.find(link);
 		
 		if (mapping == null) {

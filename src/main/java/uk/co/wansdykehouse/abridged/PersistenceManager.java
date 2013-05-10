@@ -1,17 +1,16 @@
 package uk.co.wansdykehouse.abridged;
 
-import javax.persistence.EntityManager;
-import javax.persistence.NoResultException;
-import javax.persistence.Persistence;
+import redis.clients.jedis.Jedis;
 
 public class PersistenceManager {
 	
 	private static PersistenceManager _instance = new PersistenceManager();
 
-	private EntityManager em;
-	
+    private Jedis jedis;
+
 	private PersistenceManager() {
-		em = Persistence.createEntityManagerFactory("abridged").createEntityManager();
+        jedis = new Jedis("localhost");
+        jedis.connect();
 	}
 	
 	public static PersistenceManager get() {
@@ -19,26 +18,25 @@ public class PersistenceManager {
 	}
 	
 	public Mapping find(final String link) {
-		try {
-			return (Mapping) em.createQuery("select m from Mapping m where m.url = :l").setParameter("l", link).getSingleResult();
-		} catch (NoResultException e) {
-			return null;
-		}
+        final Mapping mapping = new Mapping();
+        mapping.setUrl(link);
+        mapping.setHash(jedis.get("abridged:url:" +link));
+        return mapping.getHash() == null ? null : mapping;
 	}
 	
 	public Mapping lookup(final String hash) {
-		return (Mapping) em.createQuery("select m from Mapping m where m.hash = :h").setParameter("h", hash).getSingleResult();
+        final Mapping mapping = new Mapping();
+        mapping.setHash(hash);
+        mapping.setUrl(jedis.get("abridged:hash:" +hash));
+        return mapping.getUrl() == null ? null : mapping;
 	}
 	
 	public boolean exists(final String hash) {
-		return em.createQuery("select m from Mapping m where m.hash = :h").setParameter("h", hash).getResultList().size() > 0;
+        return jedis.exists("abridged:hash:" +hash);
 	}
 	
 	public void persist(final Mapping mapping) {
-		em.getTransaction().begin();
-		
-		em.merge(mapping);
-		
-		em.getTransaction().commit();
+        jedis.set("abridged:url:" +mapping.getUrl(), mapping.getHash());
+        jedis.set("abridged:hash:" +mapping.getHash(), mapping.getUrl());
 	}
 }
