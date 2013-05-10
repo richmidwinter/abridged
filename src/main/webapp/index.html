@@ -4,20 +4,22 @@
         <title>abridged : shortening URL service</title>
         <link rel="stylesheet" type="text/css" href="/css/style.css" />
         <link rel="stylesheet" type="text/css" href="/abridged/style.css" />
-        <script type="text/ecmascript" src="/abridged/js/jquery-1.9.1-min.js"></script>
+        <script type="text/ecmascript" src="/abridged/js/jquery-1.9.1.min.js"></script>
         <script type="text/ecmascript" src="/abridged/js/main.js"></script>
     </head>
     <body>
         <a id="up" href="/">&#8593;</a>
         <h1>abridged</h1>
         <h2>URL shortening service</h2>
-        <div id="container">
-            <form onsubmit="javascript: return go(this)">
-                <input type="text" /> <input type="submit" value="submit" />
-            </form>
-        </div>
-        <div id="output">
-            <p title="Press ctrl-c to copy" id="result"></p>
+        <div id="wrapper">
+            <div id="container">
+                <form onsubmit="javascript: return go(this)">
+                    <input type="text" /> <input type="submit" value="submit" />
+                </form>
+            </div>
+            <div id="output">
+                <p title="Press ctrl-c to copy" id="result"></p>
+            </div>
         </div>
         <footer>
             <a href="https://wansdyke-house.co.uk">Wansdyke House Ltd.</a>

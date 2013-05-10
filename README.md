@@ -1,3 +1,3 @@
 abridged
 
-URL shortening in Java.
+URL shortening in Java, backed by redis.
