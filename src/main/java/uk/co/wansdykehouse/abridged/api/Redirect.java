@@ -22,6 +22,6 @@ public class Redirect {
 	public String get(@PathParam("hash") String hash) throws URISyntaxException {
 		final Mapping mapping = p.lookup(hash);
 				
-		throw new WebApplicationException(Response.seeOther(new URI(mapping.getUrl())).build());
+		throw new WebApplicationException(Response.temporaryRedirect(new URI(mapping.getUrl())).build());
 	}
 }

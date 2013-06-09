@@ -2,24 +2,17 @@
 <html>
     <head>
         <title>abridged : shortening URL service</title>
-        <link rel="stylesheet" type="text/css" href="/css/style.css" />
-        <link rel="stylesheet" type="text/css" href="/abridged/style.css" />
-        <script type="text/ecmascript" src="/abridged/js/jquery-1.9.1.min.js"></script>
-        <script type="text/ecmascript" src="/abridged/js/main.js"></script>
+        <link rel="stylesheet" type="text/css" href="/style.css" />
+        <script type="text/ecmascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+        <script type="text/ecmascript" src="/js/main.js"></script>
     </head>
     <body>
-        <div id="icons">
-            <a href="/">&#8593;</a>
-            <a href="https://github.com/richmidwinter/abridged">
-                <img src="/img/github.png" />
-            </a>
-        </div>
         <h1>abridged</h1>
         <h2>URL shortening service</h2>
         <div id="wrapper">
             <div id="container">
                 <form onsubmit="javascript: return go(this)">
-                    <input type="text" /> <input type="submit" value="submit" />
+                    <input type="text" placeholder="Enter a URL" autofocus /> <input type="submit" value="submit" />
                 </form>
             </div>
             <div id="output">

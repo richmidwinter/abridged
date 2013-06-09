@@ -1,6 +1,26 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300);
+
 * {
     margin: 0px;
     padding: 0px;
+}
+
+a {
+    color: #259dff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+    padding: 20px;
+    padding-top: 64px;
+    max-width: 540px;
+    margin: 0 auto;
+    -webkit-font-smoothing: antialiased;
 }
 
 div#wrapper {
@@ -8,6 +28,22 @@ div#wrapper {
     padding: 0px;
     border: 20px solid #eee;
     font-family: verdana;
+}
+
+footer {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+h1, h2 {
+    font: 100 60px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 0.8;
+}
+
+h2 {
+    color: #666;
 }
 
 input[type=text] {
@@ -35,6 +71,7 @@ div#wrapper div#container {
 #output {
     width: 380px;
     margin: 0 auto;
+    margin-bottom: 20px;
 }
 
 #output p {
